@@ -4,6 +4,18 @@ $purple: #7E5DDD;
 $light-black: #303030;
 $grey: #D9DFFF;
 
+$xs: 0;
+$sm: 768px;
+$md: 1280px;
+$lg: 1680px;
+$xl: 1920px;
+
+@mixin up($value, $prop: min-width) {
+    @media only screen and (#{$prop}: #{$value}) {
+      @content
+    }
+};
+
 body {
     margin: 0;
     padding: 0;
@@ -11,7 +23,7 @@ body {
     background-color: $white;
     font-family: 'Montserrat Alternates', sans-serif;
     // TODO: убрать это когда буду заниматься адаптацией
-    max-width: 370px;
+    max-width: $lg;
     margin: 0 auto;
 }
 
@@ -24,6 +36,16 @@ h1, h2, h3, h4, h5, h6, p, a {
     text-decoration: none;
 }
 
+.container {
+    @include up($sm) {
+        padding: 0 20px;
+    }
+
+    @include up($md) {
+        padding: 0 43px;
+    }
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -31,16 +53,50 @@ h1, h2, h3, h4, h5, h6, p, a {
     padding: 7px 16px;
 
     &__left {
-        
+        display: flex;
+        align-items: center;
+
         & img {
             width: 45px;
             height: 45px;
+
+            @include up($md) {
+                width: 65px;
+                height: 65px;
+            }
+        }
+
+        &-links {
+            display: none;
+            align-items: center;
+            margin-left: 35px;
+
+            @include up($md) {
+                display: flex;
+            }
+
+            &__link {
+                font-weight: 700;
+                margin-left: 12px;
+                margin-right: 12px;
+            }
         }
     }
 
     &__right {
         display: flex;
         align-items: center;
+
+        &-tel {
+            display: none;
+            margin-right: 25px;
+            font-weight: 700;
+            font-size: 18px;
+            
+            @include up($lg) {
+                display: block;
+            }
+        }
 
         &-profile {
             display: flex;
@@ -60,6 +116,16 @@ h1, h2, h3, h4, h5, h6, p, a {
                 }
             }
 
+            @include up($md) {
+                width: 50px;
+                height: 50px;
+
+                & svg {
+                    width: 20px !important;
+                    height: 22px !important; 
+                }
+            }
+
             & svg {
                 width: 18px;
                 height: 20px;
@@ -76,6 +142,24 @@ h1, h2, h3, h4, h5, h6, p, a {
             background-color: $purple;
             color: $white;
             cursor: pointer;
+
+            @include up($md) {
+                display: none;
+            }
+        }
+
+        &-button-md {
+            display: none;
+            padding: 12px 15px;
+            border-radius: 100px;
+            border: none;
+            background-color: $purple;
+            color: $white;
+            cursor: pointer;
+
+            @include up($md) {
+                display: block;
+            }
         }
     }
 }
@@ -90,13 +174,51 @@ h1, h2, h3, h4, h5, h6, p, a {
     padding: 30px 16px;
     min-height: 590px;
 
+    @include up($sm) {
+        background-image: url('/img/intro-bg-md.jpg');
+    }
+
+    @include up($md) {
+        padding: 0;
+        border-radius: 0 20px 20px 37px;
+    }
+
     &__title {
         color: $white;
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 29px;
+        max-width: 425px;
+
+        @include up($md) {
+            color: $black;
+            background-color: $white;
+            font-size: 55px;
+            line-height: 60.5px;
+            padding: 40px 40px 40px 37px;
+            border-radius: 0 0 50px;
+            max-width: 780px;
+            margin-top: -3px;
+        }
     }
 
     &__subtitle {
         color: $white;
         margin-top: 12px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        max-width: 425px;
+
+
+        @include up($md) {
+            color: $black;
+            background-color: $white;
+            margin-top: 0;
+            padding: 0 50px 20px 37px;
+            max-width: 400px;
+            margin-top: -1px;
+        }
     }
 
     &__button {
@@ -107,6 +229,34 @@ h1, h2, h3, h4, h5, h6, p, a {
         color: $white;
         cursor: pointer;
         margin-top: 26px;
+        font-weight: 700;
+
+        @include up($md) {
+            display: none;
+        }
+    }
+
+    &__button-md {
+        display: none;
+        background-color: $white;
+        max-width: 400px;
+        border-radius: 0 0 50px 0;
+        padding: 0 50px 20px 37px;
+
+        @include up($md) {
+            display: block;
+        }
+
+        & button {
+            padding: 18px 25px;
+            border-radius: 100px;
+            border: none;
+            background-color: $purple;
+            color: $white;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        
     }
 
     &__mouse {
@@ -120,6 +270,10 @@ h1, h2, h3, h4, h5, h6, p, a {
         border-radius: 100px 100px 0 0;
         width: 90px;
         height: 50px;
+
+        @include up($md) {
+            right: 10%;
+        }
 
 
         & svg {
@@ -146,6 +300,40 @@ h1, h2, h3, h4, h5, h6, p, a {
     margin-top: 60px;
     border-radius: 20px;
 
+    @include up($md) {
+        background-image: none;
+        background-color: $purple;
+        min-height: 400px;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    &__img-left {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+
+        @include up($md) {
+            display: block;
+        }
+    }
+
+    &__img-right {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+
+        @include up($md) {
+            display: block;
+        }
+    }
+
     &__title {
         font-size: 26px;
         line-height: 31.69px;
@@ -154,6 +342,13 @@ h1, h2, h3, h4, h5, h6, p, a {
         max-width: 283px;
         margin-top: 120px;
         color: $white;
+        z-index: 2;
+
+        @include up($md) {
+            font-size: 45px;
+            max-width: 950px;
+            margin-top: 0;
+        }
     }
 
     &__subtitle {
@@ -164,6 +359,12 @@ h1, h2, h3, h4, h5, h6, p, a {
         max-width: 327px;
         margin-top: 12px;
         color: $white;
+        z-index: 2;
+
+        @include up($md) {
+            font-size: 24px;
+            max-width: 685px;
+        }
     }
 }
 
@@ -183,6 +384,14 @@ h1, h2, h3, h4, h5, h6, p, a {
     margin-bottom: 74px;
     background-color: $grey;
 
+    @include up($md) {
+        background-image: none;
+        background-color: $grey;
+        min-height: 400px;
+        overflow: hidden;
+        justify-content: center;
+    }
+
     &__title {
         font-size: 26px;
         line-height: 31.69px;
@@ -191,6 +400,13 @@ h1, h2, h3, h4, h5, h6, p, a {
         max-width: 283px;
         margin-top: 60px;
         color: $light-black;
+        z-index: 2;
+
+        @include up($md) {
+            font-size: 45px;
+            max-width: 950px;
+            margin-top: 0;
+        }
     }
 
     &__subtitle {
@@ -201,6 +417,12 @@ h1, h2, h3, h4, h5, h6, p, a {
         max-width: 327px;
         margin-top: 12px;
         color: $light-black;
+        z-index: 2;
+
+        @include up($md) {
+            font-size: 24px;
+            max-width: 685px;
+        }
     }
 
     &__button {
@@ -211,5 +433,11 @@ h1, h2, h3, h4, h5, h6, p, a {
         color: $white;
         cursor: pointer;
         margin-top: 26px;
+        z-index: 2;
+
+        @include up($md) {
+            font-size: 18px;
+            padding: 17px 25px;
+        }
     }
 }

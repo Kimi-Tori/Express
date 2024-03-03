@@ -11,45 +11,65 @@
 </head>
 <body>
     
-    <section class="navbar">
-        <div class="navbar__left">
-            <a href="#">
-                <img src="./img/svg/logo.svg" alt="Logo">
-            </a>
-        </div>
-        <div class="navbar__right">
-            <a class="navbar__right-profile" href="">
+    <div class="container">
+        <section class="navbar">
+            <div class="navbar__left">
+                <a href="#">
+                    <img src="./img/svg/logo.svg" alt="Logo">
+                </a>
+                <div class="navbar__left-links">
+                    <a href="#" class="navbar__left-links__link">Главная</a>
+                    <a href="#" class="navbar__left-links__link">Доставка из Китая</a>
+                    <a href="#" class="navbar__left-links__link">Закупка в Китае</a>
+                    <a href="#" class="navbar__left-links__link">О нас</a>
+                    <a href="#" class="navbar__left-links__link">Контакты</a>
+                    <a href="#" class="navbar__left-links__link">Отслеживание</a>
+                </div>
+            </div>
+            <div class="navbar__right">
+                <a class="navbar__right-tel" href="tel:+79773404143">+7 (977) 340-41-43</a>
+                <a class="navbar__right-profile" href="">
+                    <svg>
+                        <use xlink:href="sprite.svg#profile"></use>
+                    </svg>
+                </a>
+                <button class="navbar__right-button">Меню</button>
+                <button class="navbar__right-button-md">Написать нам</button>
+            </div>
+        </section>
+    
+        <section class="intro">
+            <h1 class="intro__title">
+                Выкуп товара под ключ с доставкой в Россию за 15 дней
+            </h1>
+            <p class="intro__subtitle">Свяжитесь с нами для идивидуального предложения и персональной консультации</p>
+            <button class="intro__button">Подробнее</button>
+            <div class="intro__button-md">
+                <button>Оставить заявку</button>
+
+            </div>
+            <a href="" class="intro__mouse">
                 <svg>
-                    <use xlink:href="sprite.svg#profile"></use>
+                    <use xlink:href="sprite.svg#mouse"></use>
                 </svg>
             </a>
-            <button class="navbar__right-button">Меню</button>
-        </div>
-    </section>
-
-    <section class="intro">
-        <h1 class="intro__title">
-            Выкуп товара под ключ с доставкой в Россию за 15 дней
-        </h1>
-        <p class="intro__subtitle">Свяжитесь с нами для идивидуального предложения и персональной консультации</p>
-        <button class="intro__button">Подробнее</button>
-        <a href="" class="intro__mouse">
-            <svg>
-                <use xlink:href="sprite.svg#mouse"></use>
-            </svg>
-        </a>
-    </section>
-
-    <section class="security">
-        <h2 class="security__title">Безопасность в каждой сделке</h2>
-        <p class="security__subtitle">Работаем по договору - если по нашей вине что-то пойдет не так, мы вернем деньги</p>
-    </section>
-
-    <section class="license">
-        <h2 class="license__title">Мы заботимся о законности нашей деятельности!</h2>
-        <p class="license__subtitle">Осуществляем деятельность на основании экспортной лицензии</p>
-        <button class="license__button">Ознакомиться с лицензией</button>
-    </section>
+        </section>
+    
+        <section class="security">
+            <img class="security__img-left" src="./img/svg/security-bg-md-left.svg" alt="">
+            <h2 class="security__title">Безопасность в каждой сделке</h2>
+            <p class="security__subtitle">Работаем по договору - если по нашей вине что-то пойдет не так, мы вернем деньги</p>
+            <img class="security__img-right" src="./img/svg/security-bg-md-right.svg" alt="">
+        </section>
+    
+        <section class="license">
+            <img class="security__img-left" src="./img/svg/security-bg-md-left.svg" alt="">
+            <h2 class="license__title">Мы заботимся о законности нашей деятельности!</h2>
+            <p class="license__subtitle">Осуществляем деятельность на основании экспортной лицензии</p>
+            <button class="license__button">Ознакомиться с лицензией</button>
+            <img class="security__img-right" src="./img/svg/security-bg-md-right.svg" alt="">
+        </section>
+    </div>
 
     <script src="./app.js"></script>
 </body>
