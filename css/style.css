@@ -323,6 +323,7 @@ a {
   padding: 0 16px;
   margin-top: 60px;
   border-radius: 20px;
+  background-color: #7e5ddd;
 }
 @media only screen and (min-width: 1280px) {
   .security {

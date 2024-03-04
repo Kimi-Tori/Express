@@ -356,6 +356,7 @@ a {
   padding: 0 16px;
   margin-top: 60px;
   border-radius: 20px;
+  background-color: $purple;
 
   @include up($md) {
     background-image: none;
