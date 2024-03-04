@@ -2,12 +2,19 @@ body {
   margin: 0;
   padding: 0;
   color: #202020;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   font-family: "Montserrat Alternates", sans-serif;
   margin: 0 auto;
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
   margin: 0;
   padding: 0;
   line-height: normal;
@@ -63,7 +70,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   margin-right: 12px;
 }
 .navbar__left-links__link:hover {
-  color: #7E5DDD;
+  color: #7e5ddd;
 }
 .navbar__right {
   display: flex;
@@ -76,7 +83,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   font-size: 18px;
 }
 .navbar__right-tel:hover {
-  color: #7E5DDD;
+  color: #7e5ddd;
 }
 @media only screen and (min-width: 1680px) {
   .navbar__right-tel {
@@ -92,13 +99,13 @@ h1, h2, h3, h4, h5, h6, p, a {
   border-radius: 100px;
   transition: linear 0.2s;
   margin-right: 15px;
-  background-color: #D9DFFF;
+  background-color: #d9dfff;
 }
 .navbar__right-profile:hover {
-  background-color: #7E5DDD;
+  background-color: #7e5ddd;
 }
 .navbar__right-profile:hover svg {
-  fill: #FFFFFF !important;
+  fill: #ffffff !important;
 }
 @media only screen and (min-width: 1280px) {
   .navbar__right-profile {
@@ -119,8 +126,8 @@ h1, h2, h3, h4, h5, h6, p, a {
   padding: 12px 15px;
   border-radius: 100px;
   border: none;
-  background-color: #7E5DDD;
-  color: #FFFFFF;
+  background-color: #7e5ddd;
+  color: #ffffff;
   cursor: pointer;
 }
 @media only screen and (min-width: 1280px) {
@@ -135,8 +142,8 @@ h1, h2, h3, h4, h5, h6, p, a {
   padding: 12px 15px;
   border-radius: 100px;
   border: none;
-  background-color: #7E5DDD;
-  color: #FFFFFF;
+  background-color: #7e5ddd;
+  color: #ffffff;
   cursor: pointer;
 }
 @media only screen and (min-width: 1280px) {
@@ -147,7 +154,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 .intro {
   position: relative;
-  background-image: url("/img/intro-bg.jpg");
+  background-image: url("../img/intro-bg.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -157,7 +164,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 @media only screen and (min-width: 768px) {
   .intro {
-    background-image: url("/img/intro-bg-md.jpg");
+    background-image: url("../img/intro-bg-md.jpg");
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -173,7 +180,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 .intro__left-social {
   display: none;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding-right: 56px;
   height: 393px;
 }
@@ -190,7 +197,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   left: 42px;
   margin-top: 40px;
   z-index: 3;
-  background-color: #D9DFFF;
+  background-color: #d9dfff;
   padding: 20px 15px;
   border-radius: 100px;
   height: -moz-fit-content;
@@ -207,7 +214,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   height: 26px !important;
 }
 .intro__title {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 26px;
   font-weight: 600;
   line-height: 29px;
@@ -216,7 +223,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 @media only screen and (min-width: 1280px) {
   .intro__title {
     color: #202020;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     font-size: 55px;
     line-height: 60.5px;
     padding: 40px 40px 40px 37px;
@@ -226,7 +233,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   }
 }
 .intro__subtitle {
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 12px;
   font-size: 16px;
   font-weight: 500;
@@ -236,7 +243,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 @media only screen and (min-width: 1280px) {
   .intro__subtitle {
     color: #202020;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     margin-top: 0;
     padding: 0 50px 20px 37px;
     max-width: 400px;
@@ -247,8 +254,8 @@ h1, h2, h3, h4, h5, h6, p, a {
   padding: 15px 25px;
   border-radius: 100px;
   border: none;
-  background-color: #7E5DDD;
-  color: #FFFFFF;
+  background-color: #7e5ddd;
+  color: #ffffff;
   cursor: pointer;
   margin-top: 26px;
   font-weight: 700;
@@ -260,7 +267,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 .intro__button-md {
   display: none;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   max-width: 400px;
   border-radius: 0 0 50px 0;
   padding: 0 50px 20px 37px;
@@ -274,8 +281,8 @@ h1, h2, h3, h4, h5, h6, p, a {
   padding: 18px 25px;
   border-radius: 100px;
   border: none;
-  background-color: #7E5DDD;
-  color: #FFFFFF;
+  background-color: #7e5ddd;
+  color: #ffffff;
   cursor: pointer;
   font-weight: 700;
 }
@@ -286,7 +293,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   position: absolute;
   bottom: -1px;
   right: 20%;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 100px 100px 0 0;
   width: 90px;
   height: 50px;
@@ -320,7 +327,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 @media only screen and (min-width: 1280px) {
   .security {
     background-image: none;
-    background-color: #7E5DDD;
+    background-color: #7e5ddd;
     min-height: 400px;
     overflow: hidden;
     justify-content: center;
@@ -359,7 +366,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   text-align: center;
   max-width: 283px;
   margin-top: 120px;
-  color: #FFFFFF;
+  color: #ffffff;
   z-index: 2;
 }
 @media only screen and (min-width: 1280px) {
@@ -376,7 +383,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   text-align: center;
   max-width: 327px;
   margin-top: 12px;
-  color: #FFFFFF;
+  color: #ffffff;
   z-index: 2;
 }
 @media only screen and (min-width: 1280px) {
@@ -400,12 +407,12 @@ h1, h2, h3, h4, h5, h6, p, a {
   margin-top: 60px;
   border-radius: 20px;
   margin-bottom: 74px;
-  background-color: #D9DFFF;
+  background-color: #d9dfff;
 }
 @media only screen and (min-width: 1280px) {
   .license {
     background-image: none;
-    background-color: #D9DFFF;
+    background-color: #d9dfff;
     min-height: 400px;
     overflow: hidden;
     justify-content: center;
@@ -448,8 +455,8 @@ h1, h2, h3, h4, h5, h6, p, a {
   padding: 15px 25px;
   border-radius: 100px;
   border: none;
-  background-color: #7E5DDD;
-  color: #FFFFFF;
+  background-color: #7e5ddd;
+  color: #ffffff;
   cursor: pointer;
   margin-top: 26px;
   z-index: 2;

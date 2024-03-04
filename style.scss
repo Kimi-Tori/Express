@@ -1,9 +1,9 @@
 $black: #202020;
-$white: #FFFFFF;
-$purple: #7E5DDD;
+$white: #ffffff;
+$purple: #7e5ddd;
 $light-black: #303030;
-$grey: #D9DFFF;
-$dark-grey: #F2F2F2;
+$grey: #d9dfff;
+$dark-grey: #f2f2f2;
 
 $xs: 0;
 $sm: 768px;
@@ -12,488 +12,489 @@ $lg: 1680px;
 $xl: 1920px;
 
 @mixin up($value, $prop: min-width) {
-    @media only screen and (#{$prop}: #{$value}) {
-      @content
-    }
-};
-
-body {
-    margin: 0;
-    padding: 0;
-    color: $black;
-    background-color: $white;
-    font-family: 'Montserrat Alternates', sans-serif;
-    // TODO: убрать это когда буду заниматься адаптацией
-    // max-width: $lg;
-    margin: 0 auto;
+  @media only screen and (#{$prop}: #{$value}) {
+    @content;
+  }
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
-    margin: 0;
-    padding: 0;
-    line-height: normal;
-    letter-spacing: normal;
-    color: $black;
-    text-decoration: none;
+body {
+  margin: 0;
+  padding: 0;
+  color: $black;
+  background-color: $white;
+  font-family: "Montserrat Alternates", sans-serif;
+  // TODO: убрать это когда буду заниматься адаптацией
+  // max-width: $lg;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $black;
+  text-decoration: none;
 }
 
 .container {
-    @include up($sm) {
-        padding: 0 20px;
-    }
+  @include up($sm) {
+    padding: 0 20px;
+  }
 
-    @include up($md) {
-        padding: 0 43px;
-    }
+  @include up($md) {
+    padding: 0 43px;
+  }
 }
 
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 16px;
+
+  &__left {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 7px 16px;
 
-    &__left {
-        display: flex;
-        align-items: center;
+    & img {
+      width: 45px;
+      height: 45px;
 
-        & img {
-            width: 45px;
-            height: 45px;
-
-            @include up($md) {
-                width: 65px;
-                height: 65px;
-            }
-        }
-
-        &-links {
-            display: none;
-            align-items: center;
-            margin-left: 35px;
-
-            @include up($md) {
-                display: flex;
-            }
-
-            &__link {
-                font-weight: 700;
-                margin-left: 12px;
-                margin-right: 12px;
-
-                &:hover {
-                    color: $purple;
-                }
-            }
-        }
+      @include up($md) {
+        width: 65px;
+        height: 65px;
+      }
     }
 
-    &__right {
+    &-links {
+      display: none;
+      align-items: center;
+      margin-left: 35px;
+
+      @include up($md) {
         display: flex;
-        align-items: center;
+      }
 
-        &-tel {
-            display: none;
-            margin-right: 25px;
-            font-weight: 700;
-            font-size: 18px;
+      &__link {
+        font-weight: 700;
+        margin-left: 12px;
+        margin-right: 12px;
 
-            &:hover {
-                color: $purple;
-            }
-            
-            @include up($lg) {
-                display: block;
-            }
+        &:hover {
+          color: $purple;
         }
-
-        &-profile {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 100px;
-            transition: linear 0.2s;
-            margin-right: 15px;
-            background-color: $grey;
-
-            &:hover {
-                background-color: $purple;
-
-                & svg {
-                    fill: $white !important;
-                }
-            }
-
-            @include up($md) {
-                width: 50px;
-                height: 50px;
-
-                & svg {
-                    width: 20px !important;
-                    height: 22px !important; 
-                }
-            }
-
-            & svg {
-                width: 18px;
-                height: 20px;
-                fill: $black;
-            }
-        }
-
-        
-
-        &-button {
-            padding: 12px 15px;
-            border-radius: 100px;
-            border: none;
-            background-color: $purple;
-            color: $white;
-            cursor: pointer;
-
-            @include up($md) {
-                display: none;
-            }
-        }
-
-        &-button-md {
-            display: none;
-            font-size: 13px;
-            font-weight: 700;
-            padding: 12px 15px;
-            border-radius: 100px;
-            border: none;
-            background-color: $purple;
-            color: $white;
-            cursor: pointer;
-
-            @include up($md) {
-                display: block;
-            }
-        }
+      }
     }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+    &-tel {
+      display: none;
+      margin-right: 25px;
+      font-weight: 700;
+      font-size: 18px;
+
+      &:hover {
+        color: $purple;
+      }
+
+      @include up($lg) {
+        display: block;
+      }
+    }
+
+    &-profile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 100px;
+      transition: linear 0.2s;
+      margin-right: 15px;
+      background-color: $grey;
+
+      &:hover {
+        background-color: $purple;
+
+        & svg {
+          fill: $white !important;
+        }
+      }
+
+      @include up($md) {
+        width: 50px;
+        height: 50px;
+
+        & svg {
+          width: 20px !important;
+          height: 22px !important;
+        }
+      }
+
+      & svg {
+        width: 18px;
+        height: 20px;
+        fill: $black;
+      }
+    }
+
+    &-button {
+      padding: 12px 15px;
+      border-radius: 100px;
+      border: none;
+      background-color: $purple;
+      color: $white;
+      cursor: pointer;
+
+      @include up($md) {
+        display: none;
+      }
+    }
+
+    &-button-md {
+      display: none;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 12px 15px;
+      border-radius: 100px;
+      border: none;
+      background-color: $purple;
+      color: $white;
+      cursor: pointer;
+
+      @include up($md) {
+        display: block;
+      }
+    }
+  }
 }
 
 .intro {
-    position: relative;
-    background-image: url('/img/intro-bg.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 20px;
-    padding: 30px 16px;
-    min-height: 590px;
+  position: relative;
+  background-image: url("../img/intro-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 30px 16px;
+  min-height: 590px;
 
-    @include up($sm) {
-        background-image: url('/img/intro-bg-md.jpg');
+  @include up($sm) {
+    background-image: url("../img/intro-bg-md.jpg");
+  }
+
+  @include up($md) {
+    padding: 0;
+    border-radius: 0 20px 20px 37px;
+    min-height: 750px;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    &-social {
+      display: none;
+      background-color: $white;
+      padding-right: 56px;
+      height: 393px;
+
+      @include up($md) {
+        display: block;
+      }
+
+      &__bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        left: 42px;
+        margin-top: 40px;
+        z-index: 3;
+        background-color: $grey;
+        padding: 20px 15px;
+        border-radius: 100px;
+        height: fit-content;
+
+        &-item {
+          margin-top: 20px;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          &__img {
+            width: 26px !important;
+            height: 26px !important;
+          }
+        }
+      }
     }
+  }
+
+  &__title {
+    color: $white;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 29px;
+    max-width: 425px;
 
     @include up($md) {
-        padding: 0;
-        border-radius: 0 20px 20px 37px;
-        min-height: 750px;
+      color: $black;
+      background-color: $white;
+      font-size: 55px;
+      line-height: 60.5px;
+      padding: 40px 40px 40px 37px;
+      border-radius: 0 0 50px;
+      max-width: 780px;
+      margin-top: -3px;
+    }
+  }
+
+  &__subtitle {
+    color: $white;
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    max-width: 425px;
+
+    @include up($md) {
+      color: $black;
+      background-color: $white;
+      margin-top: 0;
+      padding: 0 50px 20px 37px;
+      max-width: 400px;
+      margin-top: -1px;
+    }
+  }
+
+  &__button {
+    padding: 15px 25px;
+    border-radius: 100px;
+    border: none;
+    background-color: $purple;
+    color: $white;
+    cursor: pointer;
+    margin-top: 26px;
+    font-weight: 700;
+
+    @include up($md) {
+      display: none;
+    }
+  }
+
+  &__button-md {
+    display: none;
+    background-color: $white;
+    max-width: 400px;
+    border-radius: 0 0 50px 0;
+    padding: 0 50px 20px 37px;
+
+    @include up($md) {
+      display: block;
     }
 
-    &__left {
-        display: flex;
-        align-items: center;
+    & button {
+      padding: 18px 25px;
+      border-radius: 100px;
+      border: none;
+      background-color: $purple;
+      color: $white;
+      cursor: pointer;
+      font-weight: 700;
+    }
+  }
 
-        &-social {
-            display: none;
-            background-color: $white;
-            padding-right: 56px;
-            height: 393px;
+  &__mouse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -1px;
+    right: 20%;
+    background-color: $white;
+    border-radius: 100px 100px 0 0;
+    width: 90px;
+    height: 50px;
 
-            @include up($md) {
-                display: block;
-            }
-
-            &__bar {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                position: fixed;
-                left: 42px;
-                margin-top: 40px;
-                z-index: 3;
-                background-color: $grey;
-                padding: 20px 15px;
-                border-radius: 100px;
-                height: fit-content;
-
-                &-item {
-                    margin-top: 20px;
-
-                    &:first-child {
-                        margin-top: 0;
-                    }
-
-                    &__img {
-                        width: 26px !important;
-                        height: 26px !important;
-                    }
-                }
-            }
-        }
+    @include up($md) {
+      right: 10%;
     }
 
-    &__title {
-        color: $white;
-        font-size: 26px;
-        font-weight: 600;
-        line-height: 29px;
-        max-width: 425px;
-
-        @include up($md) {
-            color: $black;
-            background-color: $white;
-            font-size: 55px;
-            line-height: 60.5px;
-            padding: 40px 40px 40px 37px;
-            border-radius: 0 0 50px;
-            max-width: 780px;
-            margin-top: -3px;
-        }
+    & svg {
+      stroke: $light-black;
+      fill: transparent;
+      width: 18px;
+      height: 25px;
     }
-
-    &__subtitle {
-        color: $white;
-        margin-top: 12px;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 22px;
-        max-width: 425px;
-
-
-        @include up($md) {
-            color: $black;
-            background-color: $white;
-            margin-top: 0;
-            padding: 0 50px 20px 37px;
-            max-width: 400px;
-            margin-top: -1px;
-        }
-    }
-
-    &__button {
-        padding: 15px 25px;
-        border-radius: 100px;
-        border: none;
-        background-color: $purple;
-        color: $white;
-        cursor: pointer;
-        margin-top: 26px;
-        font-weight: 700;
-
-        @include up($md) {
-            display: none;
-        }
-    }
-
-    &__button-md {
-        display: none;
-        background-color: $white;
-        max-width: 400px;
-        border-radius: 0 0 50px 0;
-        padding: 0 50px 20px 37px;
-
-        @include up($md) {
-            display: block;
-        }
-
-        & button {
-            padding: 18px 25px;
-            border-radius: 100px;
-            border: none;
-            background-color: $purple;
-            color: $white;
-            cursor: pointer;
-            font-weight: 700;
-        }
-        
-    }
-
-    &__mouse {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        bottom: -1px;
-        right: 20%;
-        background-color: $white;
-        border-radius: 100px 100px 0 0;
-        width: 90px;
-        height: 50px;
-
-        @include up($md) {
-            right: 10%;
-        }
-
-
-        & svg {
-            stroke: $light-black;
-            fill: transparent;
-            width: 18px;
-            height: 25px;
-        }
-
-    }
+  }
 }
 
 .security {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    background-image: url('/img/security-bg.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 590px;
-    padding: 0 16px;
-    margin-top: 60px;
-    border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-image: url("/img/security-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 590px;
+  padding: 0 16px;
+  margin-top: 60px;
+  border-radius: 20px;
+
+  @include up($md) {
+    background-image: none;
+    background-color: $purple;
+    min-height: 400px;
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  &__img-left {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
 
     @include up($md) {
-        background-image: none;
-        background-color: $purple;
-        min-height: 400px;
-        overflow: hidden;
-        justify-content: center;
+      display: block;
     }
+  }
 
-    &__img-left {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        z-index: 1;
+  &__img-right {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
 
-        @include up($md) {
-            display: block;
-        }
+    @include up($md) {
+      display: block;
     }
+  }
 
-    &__img-right {
-        display: none;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1;
+  &__title {
+    font-size: 26px;
+    line-height: 31.69px;
+    font-weight: 600;
+    text-align: center;
+    max-width: 283px;
+    margin-top: 120px;
+    color: $white;
+    z-index: 2;
 
-        @include up($md) {
-            display: block;
-        }
+    @include up($md) {
+      font-size: 45px;
+      max-width: 950px;
+      margin-top: 0;
     }
+  }
 
-    &__title {
-        font-size: 26px;
-        line-height: 31.69px;
-        font-weight: 600;
-        text-align: center;
-        max-width: 283px;
-        margin-top: 120px;
-        color: $white;
-        z-index: 2;
+  &__subtitle {
+    font-size: 16px;
+    line-height: 21.82px;
+    font-weight: 500;
+    text-align: center;
+    max-width: 327px;
+    margin-top: 12px;
+    color: $white;
+    z-index: 2;
 
-        @include up($md) {
-            font-size: 45px;
-            max-width: 950px;
-            margin-top: 0;
-        }
+    @include up($md) {
+      font-size: 24px;
+      max-width: 685px;
     }
-
-    &__subtitle {
-        font-size: 16px;
-        line-height: 21.82px;
-        font-weight: 500;
-        text-align: center;
-        max-width: 327px;
-        margin-top: 12px;
-        color: $white;
-        z-index: 2;
-
-        @include up($md) {
-            font-size: 24px;
-            max-width: 685px;
-        }
-    }
+  }
 }
 
 .license {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    background-image: url('/img/license-bg.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 590px;
-    padding: 0 16px;
-    margin-top: 60px;
-    border-radius: 20px;
-    margin-bottom: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-image: url("/img/license-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 590px;
+  padding: 0 16px;
+  margin-top: 60px;
+  border-radius: 20px;
+  margin-bottom: 74px;
+  background-color: $grey;
+
+  @include up($md) {
+    background-image: none;
     background-color: $grey;
+    min-height: 400px;
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 26px;
+    line-height: 31.69px;
+    font-weight: 600;
+    text-align: center;
+    max-width: 283px;
+    margin-top: 60px;
+    color: $light-black;
+    z-index: 2;
 
     @include up($md) {
-        background-image: none;
-        background-color: $grey;
-        min-height: 400px;
-        overflow: hidden;
-        justify-content: center;
+      font-size: 45px;
+      max-width: 950px;
+      margin-top: 0;
     }
+  }
 
-    &__title {
-        font-size: 26px;
-        line-height: 31.69px;
-        font-weight: 600;
-        text-align: center;
-        max-width: 283px;
-        margin-top: 60px;
-        color: $light-black;
-        z-index: 2;
+  &__subtitle {
+    font-size: 16px;
+    line-height: 21.82px;
+    font-weight: 500;
+    text-align: center;
+    max-width: 327px;
+    margin-top: 12px;
+    color: $light-black;
+    z-index: 2;
 
-        @include up($md) {
-            font-size: 45px;
-            max-width: 950px;
-            margin-top: 0;
-        }
+    @include up($md) {
+      font-size: 24px;
+      max-width: 685px;
     }
+  }
 
-    &__subtitle {
-        font-size: 16px;
-        line-height: 21.82px;
-        font-weight: 500;
-        text-align: center;
-        max-width: 327px;
-        margin-top: 12px;
-        color: $light-black;
-        z-index: 2;
+  &__button {
+    padding: 15px 25px;
+    border-radius: 100px;
+    border: none;
+    background-color: $purple;
+    color: $white;
+    cursor: pointer;
+    margin-top: 26px;
+    z-index: 2;
 
-        @include up($md) {
-            font-size: 24px;
-            max-width: 685px;
-        }
+    @include up($md) {
+      font-size: 18px;
+      padding: 17px 25px;
     }
-
-    &__button {
-        padding: 15px 25px;
-        border-radius: 100px;
-        border: none;
-        background-color: $purple;
-        color: $white;
-        cursor: pointer;
-        margin-top: 26px;
-        z-index: 2;
-
-        @include up($md) {
-            font-size: 18px;
-            padding: 17px 25px;
-        }
-    }
+  }
 }
