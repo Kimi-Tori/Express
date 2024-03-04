@@ -3,6 +3,7 @@ $white: #FFFFFF;
 $purple: #7E5DDD;
 $light-black: #303030;
 $grey: #D9DFFF;
+$dark-grey: #F2F2F2;
 
 $xs: 0;
 $sm: 768px;
@@ -23,7 +24,7 @@ body {
     background-color: $white;
     font-family: 'Montserrat Alternates', sans-serif;
     // TODO: убрать это когда буду заниматься адаптацией
-    max-width: $lg;
+    // max-width: $lg;
     margin: 0 auto;
 }
 
@@ -79,6 +80,10 @@ h1, h2, h3, h4, h5, h6, p, a {
                 font-weight: 700;
                 margin-left: 12px;
                 margin-right: 12px;
+
+                &:hover {
+                    color: $purple;
+                }
             }
         }
     }
@@ -92,6 +97,10 @@ h1, h2, h3, h4, h5, h6, p, a {
             margin-right: 25px;
             font-weight: 700;
             font-size: 18px;
+
+            &:hover {
+                color: $purple;
+            }
             
             @include up($lg) {
                 display: block;
@@ -107,6 +116,7 @@ h1, h2, h3, h4, h5, h6, p, a {
             border-radius: 100px;
             transition: linear 0.2s;
             margin-right: 15px;
+            background-color: $grey;
 
             &:hover {
                 background-color: $purple;
@@ -150,6 +160,8 @@ h1, h2, h3, h4, h5, h6, p, a {
 
         &-button-md {
             display: none;
+            font-size: 13px;
+            font-weight: 700;
             padding: 12px 15px;
             border-radius: 100px;
             border: none;
@@ -181,6 +193,50 @@ h1, h2, h3, h4, h5, h6, p, a {
     @include up($md) {
         padding: 0;
         border-radius: 0 20px 20px 37px;
+        min-height: 750px;
+    }
+
+    &__left {
+        display: flex;
+        align-items: center;
+
+        &-social {
+            display: none;
+            background-color: $white;
+            padding-right: 56px;
+            height: 393px;
+
+            @include up($md) {
+                display: block;
+            }
+
+            &__bar {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: fixed;
+                left: 42px;
+                margin-top: 40px;
+                z-index: 3;
+                background-color: $grey;
+                padding: 20px 15px;
+                border-radius: 100px;
+                height: fit-content;
+
+                &-item {
+                    margin-top: 20px;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+
+                    &__img {
+                        width: 26px !important;
+                        height: 26px !important;
+                    }
+                }
+            }
+        }
     }
 
     &__title {
