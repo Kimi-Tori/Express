@@ -398,6 +398,8 @@ a {
   .security {
     background-image: none;
     min-height: 400px;
+    max-width: 1497px;
+    margin: 60px auto auto;
     overflow: hidden;
     justify-content: center;
   }
@@ -469,6 +471,8 @@ a {
 @media only screen and (min-width: 1280px) {
   .banner {
     display: block;
+    max-width: 1470px;
+    margin: 180px auto auto;
   }
 }
 .banner__title {
@@ -500,6 +504,7 @@ a {
   border-radius: 20px;
   overflow: hidden;
   max-width: 315px;
+  min-width: 315px;
   max-height: 190px;
   margin-top: 15px;
   cursor: pointer;
@@ -529,6 +534,7 @@ a {
   max-height: 600px;
   margin-left: 26px;
   overflow: hidden;
+  width: 100%;
 }
 .banner__container-right__block-image {
   max-width: 100%;
@@ -609,6 +615,7 @@ a {
   border-radius: 20px;
   overflow: hidden;
   max-width: 315px;
+  min-width: 315px;
   max-height: 190px;
   margin-top: 15px;
   cursor: pointer;
@@ -638,6 +645,7 @@ a {
   max-height: 600px;
   margin-left: 26px;
   overflow: hidden;
+  width: 100%;
 }
 .banner__container-bottom__right-block__image {
   max-width: 100%;
@@ -713,9 +721,10 @@ a {
   .license {
     background-image: none;
     min-height: 400px;
+    max-width: 1497px;
     overflow: hidden;
     justify-content: center;
-    margin-top: 180px;
+    margin: 180px auto 74px;
   }
 }
 .license__title {
