@@ -1,6 +1,7 @@
 $black: #202020;
 $white: #ffffff;
 $purple: #7e5ddd;
+$light-purple: #D8DFFF;
 $light-black: #303030;
 $grey: #d9dfff;
 $dark-grey: #f2f2f2;
@@ -26,6 +27,7 @@ body {
   // TODO: убрать это когда буду заниматься адаптацией
   // max-width: $lg;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 h1,
@@ -191,7 +193,7 @@ a {
   padding: 30px 16px;
   min-height: 590px;
 
-  @include up($sm) {
+  @include up($md) {
     background-image: url("../img/intro-bg-md.jpg");
   }
 
@@ -207,12 +209,28 @@ a {
 
     &-social {
       display: none;
+      position: relative;
       background-color: $white;
       padding-right: 56px;
       height: 393px;
 
       @include up($md) {
         display: block;
+      }
+
+      &::before, &::after {
+        display: none;
+        content: '';
+        position: absolute;
+        bottom: -49px;
+        left: -1px;
+        width: 50px;
+        height: 50px;
+        background-image: radial-gradient(circle at 100% 100%, transparent 50px, $white  50px);
+  
+        @include up($md) {
+          display: block;
+        }
       }
 
       &__bar {
@@ -245,6 +263,7 @@ a {
   }
 
   &__title {
+    position: relative;
     color: $white;
     font-size: 26px;
     font-weight: 600;
@@ -261,9 +280,25 @@ a {
       max-width: 780px;
       margin-top: -3px;
     }
+
+    &::before, &::after {
+      display: none;
+      content: '';
+      position: absolute;
+      top: 2px;
+      right: -49px;
+      width: 50px;
+      height: 50px;
+      background-image: radial-gradient(circle at 100% 100%, transparent 50px, $white  50px);
+
+      @include up($md) {
+        display: block;
+      }
+    }
   }
 
   &__subtitle {
+    position: relative;
     color: $white;
     margin-top: 12px;
     font-size: 16px;
@@ -278,6 +313,21 @@ a {
       padding: 0 50px 20px 37px;
       max-width: 400px;
       margin-top: -1px;
+    }
+
+    &::before, &::after {
+      display: none;
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: -49px;
+      width: 50px;
+      height: 50px;
+      background-image: radial-gradient(circle at 100% 100%, transparent 50px, $white  50px);
+
+      @include up($md) {
+        display: block;
+      }
     }
   }
 
@@ -327,8 +377,8 @@ a {
     right: 20%;
     background-color: $white;
     border-radius: 100px 100px 0 0;
-    width: 90px;
-    height: 50px;
+    width: 150px;
+    height: 70px;
 
     @include up($md) {
       right: 10%;
@@ -339,6 +389,28 @@ a {
       fill: transparent;
       width: 18px;
       height: 25px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 138px;
+      width: 50px;
+      height: 50px;
+      background-image: radial-gradient(circle at 100% 100%, transparent 51px, $white  50px);
+      transform: rotate(270deg);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -39px;
+      width: 50px;
+      height: 50px;
+      background-image: radial-gradient(circle at 100% 100%, transparent 51px, $white  50px);
+      transform: rotate(180deg);
     }
   }
 }
@@ -360,7 +432,6 @@ a {
 
   @include up($md) {
     background-image: none;
-    background-color: $purple;
     min-height: 400px;
     overflow: hidden;
     justify-content: center;
@@ -426,6 +497,257 @@ a {
   }
 }
 
+.banner {
+  display: none;
+  margin-top: 180px;
+
+  @include up($md) {
+    display: block;
+  }
+
+  &__title {
+    font-size: 45px;
+    font-weight: 600;
+    max-width: 565px;
+  }
+
+  &__plah {
+    width: fit-content;
+    margin-top: 20px;
+    background-color: $light-purple;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 100px;
+  }
+
+  &__container {
+    display: flex;
+    margin-top: 30px;
+
+    &-left__block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &-item {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        max-width: 315px;
+        max-height: 190px;
+        margin-top: 15px;
+        cursor: pointer;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &__image {
+          max-width: 100%;
+          max-height: 100%;
+          width: 100%;
+          height: 100%;
+        }
+
+        &__text {
+          color: $white;
+          font-size: 28px;
+          font-weight: 600;
+          position: absolute;
+          text-align: center;
+          bottom: 20px;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+      }
+    }
+
+    &-right__block {
+      position: relative;
+      border-radius: 20px;
+      max-height: 600px;
+      margin-left: 26px;
+      overflow: hidden;
+
+      &-image {
+        max-width: 100%;
+        max-height: 100%;
+        height: 100%;
+        width: 100%;
+      }
+
+      &-button {
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
+  
+        &__item {
+          background-color: $white;
+          border: none;
+          border-radius: 50px 50px 0 50px;
+          width: fit-content;
+          height: fit-content;
+          padding: 10px;
+  
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: -20px;
+            width: 40px;
+            height: 30px;
+            background-image: radial-gradient(circle at 100% 60%, transparent 25px, $white  20px);
+            transform: rotate(180deg);
+            z-index: 1;
+          }
+  
+          &::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            right: 0;
+            width: 40px;
+            height: 30px;
+            background-image: radial-gradient(circle at 105% 15%, transparent 25px, $white  20px);
+            transform: rotate(270deg);
+            z-index: 1;
+          }
+  
+          &-svg {
+            position: relative;
+            background-color: $purple;
+            border-radius: 100px;
+            padding: 20px;
+            width: 40px;
+            height: 40px;
+            z-index: 2;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.plah {
+  width: fit-content;
+  margin-top: 100px;
+  background-color: $light-purple;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 100px;
+}
+
+.banner__container-bottom {
+  display: flex;
+  margin-top: 30px;
+    
+  &__left-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      max-width: 315px;
+      max-height: 190px;
+      margin-top: 15px;
+      cursor: pointer;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &-image {
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        height: 100%;
+      }
+
+      &-text {
+        color: $white;
+        font-size: 28px;
+        font-weight: 600;
+        position: absolute;
+        text-align: center;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+
+  &__right-block {
+    position: relative;
+    border-radius: 20px;
+    max-height: 600px;
+    margin-left: 26px;
+    overflow: hidden;
+
+    &__image {
+      max-width: 100%;
+      max-height: 100%;
+      height: 100%;
+      width: 100%;
+    }
+
+    &__button {
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+
+      &-item {
+        background-color: $white;
+        border: none;
+        border-radius: 50px 50px 0 50px;
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 10px;
+          left: -20px;
+          width: 40px;
+          height: 30px;
+          background-image: radial-gradient(circle at 100% 60%, transparent 25px, $white  20px);
+          transform: rotate(180deg);
+          z-index: 1;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: -15px;
+          right: 0;
+          width: 40px;
+          height: 30px;
+          background-image: radial-gradient(circle at 105% 15%, transparent 25px, $white  20px);
+          transform: rotate(270deg);
+          z-index: 1;
+        }
+
+        &__svg {
+          position: relative;
+          background-color: $purple;
+          border-radius: 100px;
+          padding: 20px;
+          width: 40px;
+          height: 40px;
+          z-index: 2;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
 .license {
   display: flex;
   flex-direction: column;
@@ -444,10 +766,10 @@ a {
 
   @include up($md) {
     background-image: none;
-    background-color: $grey;
     min-height: 400px;
     overflow: hidden;
     justify-content: center;
+    margin-top: 180px;
   }
 
   &__title {
