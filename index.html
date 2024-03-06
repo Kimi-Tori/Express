@@ -21,7 +21,34 @@
                     <a href="#" class="navbar__left-links__link">Главная</a>
                     <a href="#" class="navbar__left-links__link">Доставка из Китая</a>
                     <a href="#" class="navbar__left-links__link">Закупка в Китае</a>
-                    <a href="#" class="navbar__left-links__link">О нас</a>
+                    <div class="navbar__left-links__link-block">
+                        <a href="#" class="navbar__left-links__link menu__open">
+                            О нас 
+                            <svg class="navbar__left-links__link-svg">
+                                <use xlink:href="sprite.svg#arrowBottom"></use>
+                            </svg>
+                        </a>
+                        <div class="navbar__left-links-block__menu">
+                            <a href="" class="navbar__left-links-block__menu-item">Команда</a>
+                            <a href="" class="navbar__left-links-block__menu-item item__menu-active">
+                                Отзывы
+                                <svg class="navbar__left-links-block__menu-item__svg">
+                                    <use xlink:href="sprite.svg#arrow"></use>
+                                </svg>
+                            </a>
+                            <div class="navbar__left-links-block__right">
+                                <a href="" class="navbar__left-links-block__right-item">Команда</a>
+                                <a href="" class="navbar__left-links-block__right-item">Отзывы</a>
+                                <a href="" class="navbar__left-links-block__right-item">Новости</a>
+                                <a href="" class="navbar__left-links-block__right-item">FAQ</a>
+                                <a href="" class="navbar__left-links-block__right-item">Договора</a>
+                            </div>
+                            <a href="" class="navbar__left-links-block__menu-item">Новости</a>
+                            <a href="" class="navbar__left-links-block__menu-item">FAQ</a>
+                            <a href="" class="navbar__left-links-block__menu-item">Договора</a>
+                        </div>
+                    </div>
+                    
                     <a href="#" class="navbar__left-links__link">Контакты</a>
                     <a href="#" class="navbar__left-links__link">Отслеживание</a>
                 </div>
@@ -35,6 +62,89 @@
                 </a>
                 <button class="navbar__right-button">Меню</button>
                 <button class="navbar__right-button-md">Написать нам</button>
+            </div>
+            <div class="navbar__mobile">
+                <div class="navbar__mobile-container">
+                    <a href="#" class="navbar__mobile-item">Главная</a>
+                    <a href="#" class="navbar__mobile-item">Доставка из Китая</a>
+                    <a href="#" class="navbar__mobile-item">Закупка в Китае</a>
+                    <div class="navbar__mobile-item__container">
+                        <a href="#" class="navbar__mobile-item">О нас</a>
+                        <svg class="navbar__mobile-svg">
+                            <use xlink:href="sprite.svg#arrow"></use>
+                        </svg>
+                    </div>
+                    <a href="#" class="navbar__mobile-item">Контакты</a>
+                    <a href="#" class="navbar__mobile-item">Отслеживание</a>
+                </div>
+
+                <div class="navbar__mobile-container__about">
+                    <div class="navbar__mobile-border">
+                        <a href="#" class="navbar__mobile-item__about__title">
+                            <svg class="navbar__mobile-item__about-svg">
+                                <use xlink:href="sprite.svg#arrow"></use>
+                            </svg>
+                            О нас
+                        </a>
+                    </div>
+                    
+
+                    <div class="navbar__mobile-border">
+                        <a href="#" class="navbar__mobile-item__about">
+                            Команда
+                            <svg class="navbar__mobile-item__about-svg__bottom">
+                                <use xlink:href="sprite.svg#arrow"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="navbar__mobile-item__about">
+                            Команда
+                            <svg class="navbar__mobile-item__about-svg__bottom">
+                                <use xlink:href="sprite.svg#arrow"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="navbar__mobile-item__about">
+                            Команда
+                            <svg class="navbar__mobile-item__about-svg__bottom">
+                                <use xlink:href="sprite.svg#arrow"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="navbar__mobile-item__about">
+                            Команда
+                            <svg class="navbar__mobile-item__about-svg__bottom">
+                                <use xlink:href="sprite.svg#arrow"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+
+                
+                <div class="navbar__mobile-bottom__container">
+                    <div class="navbar__mobile-bottom">
+                        <svg class="navbar__mobile-bottom__svg">
+                            <use xlink:href="sprite.svg#tel"></use>
+                        </svg>
+                        <a href="tel:+79773404143" class="navbar__mobile-bottom__item">+7 (977) 340-41-43</a>
+                    </div>
+                    <div class="navbar__mobile-bottom">
+                        <svg class="navbar__mobile-bottom__svg">
+                            <use xlink:href="sprite.svg#vk"></use>
+                        </svg>
+                        <a href="" target="_blank" class="navbar__mobile-bottom__item">Вконтакте</a>
+                    </div>
+                    <div class="navbar__mobile-bottom">
+                        <svg class="navbar__mobile-bottom__svg">
+                            <use xlink:href="sprite.svg#tg"></use>
+                        </svg>
+                        <a href="" target="_blank" class="navbar__mobile-bottom__item">Telegram</a>
+                    </div>
+                    <div class="navbar__mobile-bottom">
+                        <svg class="navbar__mobile-bottom__svg">
+                            <use xlink:href="sprite.svg#wa"></use>
+                        </svg>
+                        <a href="" target="_blank" class="navbar__mobile-bottom__item">WhatsApp</a>
+                    </div>
+                </div>
             </div>
         </section>
     
@@ -155,6 +265,19 @@
             <p class="license__subtitle">Осуществляем деятельность на основании экспортной лицензии</p>
             <button class="license__button">Ознакомиться с лицензией</button>
             <img class="security__img-right" src="./img/svg/security-bg-md-right.svg" alt="">
+        </section>
+
+        <section class="form">
+            <h1 class="form__title">Нужна консультация специалиста?</h1>
+            <form class="form__block">
+                <input type="text" placeholder="Имя" class="form__block-item">
+                <input type="text" placeholder="Телефон" class="form__block-item">
+                <input type="text" placeholder="E-mail" class="form__block-item">
+                <div class="form__block-submit">
+                    <button class="form__block-submit__button">Оставить заявку</button>
+                    <p class="form__block-submit__text">Нажимая на кнопку «отправить», Вы соглашаетесь на обработку персональных данных в соответствии с пользовательским соглашением.</p>
+                </div>
+            </form>
         </section>
     </div>
 
