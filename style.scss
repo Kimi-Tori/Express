@@ -1161,11 +1161,13 @@ a {
       }
 
       &__text {
-        display: block;
+        display: flex;
+        align-items: center;
         color: $white;
         font-size: 16px;
         font-weight: 400;
         margin-top: 20px;
+        white-space: nowrap;
 
         &:hover {
           color: $pink;
@@ -1177,6 +1179,12 @@ a {
 
         &:first-child {
           margin-top: 30px;
+        }
+
+        &-svg {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
         }
       }
     }

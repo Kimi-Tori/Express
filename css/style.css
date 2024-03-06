@@ -1057,11 +1057,13 @@ a {
   font-weight: 600;
 }
 .footer__top-contacts__text {
-  display: block;
+  display: flex;
+  align-items: center;
   color: #ffffff;
   font-size: 16px;
   font-weight: 400;
   margin-top: 20px;
+  white-space: nowrap;
 }
 .footer__top-contacts__text:hover {
   color: #DD017F;
@@ -1071,6 +1073,11 @@ a {
 }
 .footer__top-contacts__text:first-child {
   margin-top: 30px;
+}
+.footer__top-contacts__text-svg {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 .footer__top-menu {
   margin-left: 185px;
