@@ -645,6 +645,49 @@ a {
   }
 }
 
+.card {
+  display: none;
+  margin-top: 180px;
+  max-width: 1495px;
+  margin: 180px auto 0;
+
+  @include up($md) {
+    display: block;
+  }
+
+  &__title {
+    font-size: 45px;
+    font-weight: 600;
+  }
+
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &-block {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      max-width: calc(100% / 4 - 18px);
+      width: 100%;
+      margin-top: 50px;
+
+      &__svg {
+        width: 66px;
+        height: 66px;
+        margin: 0 auto;
+      }
+
+      &__text {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
 .security {
   display: flex;
   flex-direction: column;
@@ -664,7 +707,7 @@ a {
     background-image: none;
     min-height: 400px;
     max-width: 1497px;
-    margin: 60px auto auto;
+    margin: 180px auto auto;
     overflow: hidden;
     justify-content: center;
   }
@@ -1061,12 +1104,219 @@ a {
   }
 }
 
+.team {
+  display: none;
+  max-width: 1497px;
+  margin: 180px auto 0;
+
+  @include up($md) {
+    display: block;
+  }
+
+  &__title {
+    font-size: 45px;
+    font-weight: 600;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 26px;
+
+    &-item {
+      max-width: calc(100% / 5 - 48px - 64px + 9px);
+      margin: 24px;
+      padding: 32px;
+      background-color: $dark-grey;
+      border-radius: 20px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:nth-child(1n+5) {
+        margin-right: 0;
+      }
+      &:nth-child(1n+6) {
+        margin-left: 0;
+      }
+
+      &__img {
+        border-radius: 20px;
+        width: 100%;
+      }
+
+      &__name { 
+        margin-top: 20px;
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      &__block {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        &-text {
+          max-width: 115px;
+        }
+
+        &-button {
+          display: block;
+          width: fit-content;
+          background-color: $light-black;
+          border-radius: 100px;
+          padding: 15.5px 19px;
+          transition: 0.2s ease;
+
+          &:hover {
+            transform: rotate(45deg);
+            background-color: $pink;
+          }
+
+          &__svg {
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slider {
+  width: 100%;
+  max-width: calc(1497px);
+  margin: 0 auto;
+  height: 390px;
+  
+
+  &-hidden {
+    display: none;
+    overflow: hidden;
+    max-width: calc(1497px);
+    margin: 180px auto 0;
+    position: relative;
+    padding-bottom: 60px;
+
+    @include up($md) {
+      display: block;
+    }
+
+    &__title {
+      font-size: 45px;
+      font-weight: 600;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__wrapper {
+    width: calc(100% * 5);
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
+
+    &-item {
+      position: relative;
+      width: calc(100% / 25);
+      height: 100%;
+
+      &:hover > &__button {
+        display: flex;
+      }
+
+      &__img {
+        display: block;
+        width: calc(100% - 24px);
+        margin: 0 auto;
+      }
+
+      &__button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -85%);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background-color: $purple;
+        border-radius: 100px;
+        width: 74px;
+        height: 74px;
+        border: none;
+        cursor: pointer;
+
+        &-svg {
+          width: 24px;
+          height: 24px;
+          fill: none;
+        }
+      }
+    }
+  }
+
+  &__controll {
+    margin-top: 40px;
+    // margin-left: 24px;
+    position: relative;
+    max-width: 256px;
+
+    &-nav {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &__item {
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        border-radius: 50%;
+        background-color: #000;
+
+        &.active {
+          width: 50px;
+          border-radius: 20px;
+        }
+      }
+    }
+
+    &-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &__svg {
+        width: 18px;
+        height: 31px;
+      }
+
+      &.slider-arrow--left {
+        left: 0;
+      }
+
+      &.slider-arrow--right {
+        right: 0;
+      }
+    }
+  }
+}
+
 .form {
   display: none;
   background-color: $grey;
   border-radius: 40px;
   padding: 70px 170px;
   align-items: center;
+  margin-top: 180px;
 
   @include up($lg) {
     display: flex;
