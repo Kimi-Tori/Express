@@ -568,6 +568,188 @@ a {
   transform: rotate(180deg);
 }
 
+.slider__first-hidden {
+  display: block;
+  overflow: hidden;
+  margin: 180px auto 0;
+  position: relative;
+  padding-bottom: 60px;
+}
+@media only screen and (max-width: 768px) {
+  .slider__first-hidden {
+    max-width: 90%;
+    margin: 60px auto 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .slider__first-hidden {
+    max-width: calc(90% + 35px);
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .slider__first-hidden {
+    max-width: 1497px;
+    margin: 180px auto 0;
+  }
+}
+.slider__first-hidden__title {
+  font-size: 45px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+@media only screen and (max-width: 1280px) {
+  .slider__first-hidden__title {
+    font-size: 23px;
+  }
+}
+
+.slider__first {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.slider__first-wrapper {
+  width: 300%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+}
+@media only screen and (max-width: 1280px) {
+  .slider__first-wrapper {
+    width: 700%;
+  }
+}
+.slider__first-wrapper__item {
+  position: relative;
+  width: calc(11.1111111111% - 15px);
+  height: 100%;
+  background-color: #D8DFFF;
+  border-radius: 20px;
+  margin-right: 24px;
+}
+.slider__first-wrapper__item:last-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 1280px) {
+  .slider__first-wrapper__item {
+    min-width: 90vw;
+    margin-right: 0;
+  }
+}
+.slider__first-wrapper__item-container {
+  display: flex;
+  align-items: center;
+  background-color: #D8DFFF;
+  padding: 40px 40px 0 40px;
+  border-radius: 20px 20px 0 0;
+}
+.slider__first-wrapper__item-container__title {
+  font-size: 45px;
+  font-weight: 600;
+  margin-right: 40px;
+}
+@media only screen and (max-width: 768px) {
+  .slider__first-wrapper__item-container__title {
+    font-size: 21px;
+  }
+}
+.slider__first-wrapper__item-container__img {
+  height: 26px;
+}
+@media only screen and (max-width: 768px) {
+  .slider__first-wrapper__item-container__img {
+    height: 100%;
+  }
+}
+.slider__first-wrapper__item-info {
+  padding: 0 40px 40px 40px;
+}
+.slider__first-wrapper__item-info__title {
+  font-size: 28px;
+  font-weight: 600;
+}
+@media only screen and (max-width: 768px) {
+  .slider__first-wrapper__item-info__title {
+    font-size: 18px;
+  }
+}
+.slider__first-wrapper__item-info__text {
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .slider__first-wrapper__item-info__text {
+    font-size: 13px;
+  }
+}
+.slider__first-wrapper__item-img {
+  display: block;
+  width: 100%;
+  background-color: #D8DFFF;
+  margin: 0 auto;
+}
+.slider__first-controll {
+  margin-top: 40px;
+  position: relative;
+  max-width: 256px;
+  display: none;
+}
+@media only screen and (min-width: 1280px) {
+  .slider__first-controll {
+    display: block;
+  }
+}
+.slider__first-controll__nav {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider__first-controll__nav-item {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #000;
+}
+.slider__first-controll__nav-item.mobile {
+  display: block;
+}
+@media only screen and (min-width: 1280px) {
+  .slider__first-controll__nav-item.mobile {
+    display: none;
+  }
+}
+.slider__first-controll__nav-item.active {
+  width: 50px;
+  border-radius: 20px;
+  background-color: #DD017F;
+}
+.slider__first-controll__nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.slider__first-controll__nav-arrow__svg {
+  width: 18px;
+  height: 31px;
+}
+.slider__first-controll__nav-arrow.slider-first-arrow--left {
+  left: 0;
+}
+.slider__first-controll__nav-arrow.slider-first-arrow--right {
+  right: 0;
+}
+
 .card {
   display: none;
   margin-top: 180px;
@@ -1164,6 +1346,7 @@ a {
 .slider__controll-nav__item.active {
   width: 50px;
   border-radius: 20px;
+  background-color: #DD017F;
 }
 .slider__controll-arrow {
   position: absolute;

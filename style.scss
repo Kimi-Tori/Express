@@ -23,6 +23,12 @@ $xl: 1920px;
   }
 }
 
+@mixin down($value, $prop: max-width) {
+  @media only screen and (#{$prop}: #{$value}) {
+    @content;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -645,6 +651,195 @@ a {
   }
 }
 
+.slider__first-hidden {
+  display: block;
+  overflow: hidden;
+  margin: 180px auto 0;
+  position: relative;
+  padding-bottom: 60px;
+
+  @include down($sm) {
+    max-width: 90%;
+    margin: 60px auto 0;
+  }
+
+  @include up($sm) {
+    max-width: calc(90% + 35px);
+  }
+
+  @include up($md) {
+    max-width: calc(1497px);
+    margin: 180px auto 0;
+  }
+
+  &__title {
+    font-size: 45px;
+    font-weight: 600;
+    margin-bottom: 50px;
+
+    @include down($md) {
+      font-size: 23px;
+    }
+  }
+}
+
+.slider__first {
+  width: 100%;
+  height: fit-content;
+
+  &-wrapper {
+    width: calc(100% * 3);
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
+
+    @include down($md) {
+      width: calc(100% * 7);
+    }
+
+    &__item {
+      position: relative;
+      width: calc(100% / 9 - 15px);
+      height: 100%;
+      background-color: $light-purple;
+      border-radius: 20px;
+      margin-right: 24px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include down($md) {
+        min-width: calc(90vw);
+        margin-right: 0;
+      }
+
+      &-container {
+        display: flex;
+        align-items: center;
+        background-color: $light-purple;
+        padding: 40px 40px 0 40px;
+        border-radius: 20px 20px 0 0;
+
+        &__title {
+          font-size: 45px;
+          font-weight: 600;
+          margin-right: 40px;
+
+          @include down($sm) {
+            font-size: 21px;
+          }
+        }
+
+        &__img {
+          height: 26px;
+
+          @include down($sm) {
+            height: 100%;
+          }
+        }
+      }
+
+      &-info {
+        padding: 0 40px 40px 40px;
+
+        &__title {
+          font-size: 28px;
+          font-weight: 600;
+
+          @include down($sm) {
+            font-size: 18px;
+          }
+        }
+
+        &__text {
+          font-size: 24px;
+          font-weight: 400;
+          margin-top: 20px;
+
+          @include down($sm) {
+            font-size: 13px;
+          }
+        }
+      }
+
+      &-img {
+        display: block;
+        width: 100%;
+        background-color: $light-purple;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &-controll {
+    margin-top: 40px;
+    position: relative;
+    max-width: 256px;
+    display: none;
+
+    @include up($md) {
+      display: block;
+    }
+
+    &__nav {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-item {
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        border-radius: 50%;
+        background-color: #000;
+
+        &.mobile {
+          display: block;
+
+          @include up($md) {
+            display: none;
+          }
+        }
+
+        &.active {
+          width: 50px;
+          border-radius: 20px;
+          background-color: $pink;
+        }
+      }
+
+      &-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &__svg {
+          width: 18px;
+          height: 31px;
+        }
+
+        &.slider-first-arrow--left {
+          left: 0;
+        }
+  
+        &.slider-first-arrow--right {
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
 .card {
   display: none;
   margin-top: 180px;
@@ -1258,7 +1453,6 @@ a {
 
   &__controll {
     margin-top: 40px;
-    // margin-left: 24px;
     position: relative;
     max-width: 256px;
 
@@ -1281,6 +1475,7 @@ a {
         &.active {
           width: 50px;
           border-radius: 20px;
+          background-color: $pink;
         }
       }
     }

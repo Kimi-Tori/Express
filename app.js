@@ -56,7 +56,6 @@ const sliderNavItems = slider.querySelectorAll('.slider__controll-nav__item');
 const sliderArrows = slider.querySelectorAll('.slider__controll-arrow');
 
 let currentSlide = 0;
-const marginLeft = 24;
 
 const slideWidth = sliderItems[0].offsetWidth;
 const slidesCount = sliderItems.length;
@@ -109,3 +108,190 @@ sliderArrows.forEach(arrow => {
     sliderNavItems[currentSlide].classList.add('active');
   });
 });
+
+const sliderFirst = document.querySelector('.slider__first');
+const sliderFirstWrapper = sliderFirst.querySelector('.slider__first-wrapper');
+const sliderFirstItems = sliderFirst.querySelectorAll('.slider__first-wrapper__item');
+const sliderFirstNav = sliderFirst.querySelector('.slider__first-controll__nav');
+const sliderFirstNavItems = sliderFirst.querySelectorAll('.slider__first-controll__nav-item');
+const sliderFirstArrows = sliderFirst.querySelectorAll('.slider__first-controll__nav-arrow');
+
+let currentSlideFirst = 0;
+let isDragging = false;
+let startPosition = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+
+const slideFirstWidth = sliderFirstItems[0].offsetWidth + 24; // Добавили отступ справа к ширине карточки
+const slidesFirstCount = sliderFirstItems.length;
+
+sliderFirstWrapper.style.transform = `translateX(-${currentSlideFirst * slideFirstWidth}px)`;
+
+sliderFirstNavItems.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    currentSlideFirst = index;
+    sliderFirstWrapper.style.transform = `translateX(-${currentSlideFirst * slideFirstWidth}px)`;
+
+    sliderFirstNavItems.forEach(item => {
+      item.classList.remove('active');
+    });
+
+    item.classList.add('active');
+  });
+});
+
+sliderFirstArrows.forEach(arrow => {
+  arrow.addEventListener('click', () => {
+    if (arrow.classList.contains('slider-first-arrow--left')) {
+      currentSlideFirst--;
+    } else if (arrow.classList.contains('slider-first-arrow--right')) {
+      if (currentSlideFirst < slidesFirstCount - 3) {
+        currentSlideFirst++;
+      } else {
+        currentSlideFirst = 0;
+      }
+    }
+
+    if (currentSlideFirst < 0) {
+      currentSlideFirst = slidesFirstCount - 3;
+    } else if (currentSlideFirst >= slidesFirstCount) {
+      currentSlideFirst = 0;
+    }
+
+    if (currentSlideFirst >= slidesFirstCount - 1) {
+      sliderFirstArrows[1].classList.add('disabled');
+    } else {
+      sliderFirstArrows[1].classList.remove('disabled');
+    }
+
+    sliderFirstWrapper.style.transform = `translateX(-${currentSlideFirst * slideFirstWidth}px)`;
+
+    sliderFirstNavItems.forEach(item => {
+      item.classList.remove('active');
+    });
+
+    sliderFirstNavItems[currentSlideFirst].classList.add('active');
+  });
+});
+
+sliderFirstWrapper.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  startPosition = e.clientX;
+  prevTranslate = currentTranslate;
+});
+
+sliderFirstWrapper.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+
+  currentTranslate = prevTranslate + (e.clientX - startPosition);
+  sliderFirstWrapper.style.transform = `translateX(${currentTranslate}px)`;
+});
+
+sliderFirstWrapper.addEventListener('mouseup', () => {
+  isDragging = false;
+
+  if (currentTranslate > 0) {
+    currentSlideFirst = 0;
+  } else if (currentTranslate < -slideFirstWidth * (slidesFirstCount - 1)) {
+    currentSlideFirst = slidesFirstCount - 1;
+  } else {
+    currentSlideFirst = Math.round(-currentTranslate / slideFirstWidth);
+  }
+
+  sliderFirstWrapper.style.transform = `translateX(-${currentSlideFirst * slideFirstWidth}px)`;
+
+  sliderFirstNavItems.forEach(item => {
+    item.classList.remove('active');
+  });
+
+  sliderFirstNavItems[currentSlideFirst].classList.add('active');
+});
+
+if (window.innerWidth <= 1280) {
+  let currentSlideFirst = 0;
+
+  const slideFirstWidth = sliderFirstItems[0].offsetWidth; // Добавили отступ справа к ширине карточки
+  const slidesFirstCount = sliderFirstItems.length;
+
+  sliderFirstWrapper.style.transform = `translateX(-${currentSlideFirst * slideFirstWidth}px)`;
+
+  sliderFirstNavItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      currentSlideFirst = index;
+      sliderFirstWrapper.style.transform = `translateX(-${currentSlideFirst * slideFirstWidth}px)`;
+
+      sliderFirstNavItems.forEach(item => {
+        item.classList.remove('active');
+      });
+
+      item.classList.add('active');
+    });
+  });
+
+  sliderFirstArrows.forEach(arrow => {
+    arrow.addEventListener('click', () => {
+      if (arrow.classList.contains('slider-first-arrow--left')) {
+        currentSlideFirst--;
+      } else if (arrow.classList.contains('slider-first-arrow--right')) {
+        if (currentSlideFirst < slidesFirstCount - 3) {
+          currentSlideFirst++;
+        } else {
+          currentSlideFirst = 0;
+        }
+      }
+
+      if (currentSlideFirst < 0) {
+        currentSlideFirst = slidesFirstCount - 3;
+      } else if (currentSlideFirst >= slidesFirstCount) {
+        currentSlideFirst = 0;
+      }
+
+      if (currentSlideFirst >= slidesFirstCount - 1) {
+        sliderFirstArrows[1].classList.add('disabled');
+      } else {
+        sliderFirstArrows[1].classList.remove('disabled');
+      }
+
+      sliderFirstWrapper.style.transform = `translateX(-${currentSlideFirst * slideFirstWidth}px)`;
+
+      sliderFirstNavItems.forEach(item => {
+        item.classList.remove('active');
+      });
+
+      sliderFirstNavItems[currentSlideFirst].classList.add('active');
+    });
+  });
+
+  sliderFirstWrapper.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startPosition = e.touches[0].clientX;
+    prevTranslate = currentTranslate;
+  });
+
+  sliderFirstWrapper.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+
+    currentTranslate = prevTranslate + (e.touches[0].clientX - startPosition);
+    sliderFirstWrapper.style.transform = `translateX(${currentTranslate}px)`;
+  });
+
+  sliderFirstWrapper.addEventListener('touchend', () => {
+    isDragging = false;
+
+    if (currentTranslate > 0) {
+      currentSlideFirst = 0;
+    } else if (currentTranslate < -slideFirstWidth * (slidesFirstCount - 1)) {
+      currentSlideFirst = slidesFirstCount - 1;
+    } else {
+      currentSlideFirst = Math.round(-currentTranslate / slideFirstWidth);
+    }
+
+    sliderFirstWrapper.style.transform = `translateX(-${currentSlideFirst * slideFirstWidth}px)`;
+
+    sliderFirstNavItems.forEach(item => {
+      item.classList.remove('active');
+    });
+
+    sliderFirstNavItems[currentSlideFirst].classList.add('active');
+  });
+}
