@@ -59,6 +59,7 @@ a {
 }
 
 .container {
+  position: relative;
   max-width: 1920px;
   margin: 0 auto;
 
@@ -67,16 +68,31 @@ a {
   }
 
   @include up($md) {
+    margin-top: 90px;
     padding: 0 43px 33px;
   }
 }
 
 .navbar {
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 7px 0;
+  z-index: 5;
+  background-color: white;
+  width: calc(100% - 86px);
+  top: 0;
+
+  @include down($md) {
+    width: calc(100% - 40px);
+    
+  }
+
+  @include down($sm) {
+    width: calc(100% - 32px);
+    padding: 7px 16px;
+  }
 
   &__mobile {
     display: none;
@@ -437,6 +453,8 @@ a {
   border-radius: 20px;
   padding: 30px 16px;
   min-height: 590px;
+  overflow: hidden;
+  margin-top: 65px;
 
   @include up($md) {
     background-image: url("../img/intro-bg-md.jpg");
@@ -445,7 +463,21 @@ a {
   @include up($md) {
     padding: 0;
     border-radius: 0 20px 20px 37px;
-    min-height: 750px;
+    min-height: 1025px;
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    display: block;
+
+    @include down($sm) {
+      left: -50%;
+    }
   }
 
   &__left {
@@ -457,9 +489,8 @@ a {
       position: relative;
       background-color: $white;
       padding-right: 56px;
-      height: 433px;
+      height: 426px;
       margin-left: -1px;
-      margin-top: -7px;
 
       @include up($md) {
         display: block;
@@ -596,6 +627,8 @@ a {
     font-weight: 700;
     line-height: 24px;
     font-family: 'Nunito', sans-serif;
+    position: relative;
+    z-index: 1;
 
     @include up($md) {
       display: none;
@@ -603,11 +636,13 @@ a {
   }
 
   &__button-md {
+    position: relative;
     display: none;
     background-color: $white;
     max-width: 400px;
     border-radius: 0 0 50px 0;
     padding: 0 50px 47px 37px;
+    z-index: 1;
 
     @include up($md) {
       display: block;
@@ -637,9 +672,9 @@ a {
     bottom: -1px;
     right: 20%;
     background-color: $white;
-    border-radius: 100px 100px 0 0;
-    width: 150px;
-    height: 70px;
+    border-radius: 50px 50px 0 0;
+    width: 110px;
+    height: 55px;
 
     @include up($md) {
       right: 10%;
@@ -656,22 +691,20 @@ a {
       content: '';
       position: absolute;
       bottom: 0;
-      left: 138px;
+      left: 100px;
       width: 50px;
-      height: 50px;
-      background-image: radial-gradient(circle at 100% 100%, transparent 51px, $white  50px);
-      transform: rotate(270deg);
+      height: 30px;
+      background-image: radial-gradient(circle at 98% -72%, transparent 51px, #ffffff 50px);
     }
 
     &::after {
       content: '';
       position: absolute;
       bottom: 0;
-      left: -39px;
+      left: -40px;
       width: 50px;
-      height: 50px;
-      background-image: radial-gradient(circle at 100% 100%, transparent 51px, $white  50px);
-      transform: rotate(180deg);
+      height: 30px;
+      background-image: radial-gradient(circle at 2% -72%, transparent 50px, #ffffff 50px);
     }
   }
 }
@@ -692,7 +725,7 @@ a {
     position: relative;
     max-width: calc(100% / 3 - 100px);
     width: 100%;
-    background-color: $card-grey;
+    background-color: $dark-grey;
     margin-bottom: 24px;
     padding: 40px;
     border-radius: 40px;
@@ -766,14 +799,13 @@ a {
       cursor: pointer;
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
-        bottom: 80px;
-        left: 59px;
+        bottom: 78px;
+        left: 70px;
         width: 30px;
-        height: 27px;
-        background-image: radial-gradient(circle at 55% 140%, transparent 25px, white 25px);
-        transform: rotate(180deg);
+        height: 30px;
+        background-image: radial-gradient(circle at -10% -35%, transparent 25px, $white 25px);
         z-index: 1;
       }
 
@@ -781,10 +813,10 @@ a {
         content: "";
         position: absolute;
         bottom: 8px;
-        left: -10px;
+        left: -9px;
         width: 30px;
-        height: 27px;
-        background-image: radial-gradient(circle at 130% 45%, transparent 25px, white 25px);
+        height: 30px;
+        background-image: radial-gradient(circle at 130% 50%, transparent 25px, $white 25px);
         transform: rotate(180deg);
         z-index: 1;
       }
@@ -1080,7 +1112,7 @@ a {
         &.active {
           width: 50px;
           border-radius: 20px;
-          background-color: $pink;
+          background-color: $purple;
         }
       }
 
@@ -1288,7 +1320,6 @@ a {
         min-width: 315px;
         max-height: 190px;
         margin-top: 15px;
-        cursor: pointer;
 
         &:first-child {
           margin-top: 0;
@@ -1375,6 +1406,10 @@ a {
             height: 40px;
             z-index: 2;
             cursor: pointer;
+
+            &:hover {
+              background-color: $pink;
+            }
           }
         }
       }
@@ -1409,7 +1444,6 @@ a {
       min-width: 315px;
       max-height: 190px;
       margin-top: 15px;
-      cursor: pointer;
 
       &:first-child {
         margin-top: 0;
@@ -1496,6 +1530,10 @@ a {
           height: 40px;
           z-index: 2;
           cursor: pointer;
+
+          &:hover {
+            background-color: $pink;
+          }
         }
       }
     }
@@ -2006,32 +2044,36 @@ a {
   }
   &__social {
     position: absolute;
-    bottom: 0;
+    bottom: -60px;
     right: 15%;
     display: flex;
     background-color: $white;
-    border-radius: 50px 50px 0 0;
-    padding: 30px 20px 0 20px;
+    border-radius: 50% 50% 0 0;
+    width: 170px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 
     &:before {
       content: "";
       position: absolute;
-      bottom: 0px;
+      bottom: 58px;
       right: -28px;
       width: 30px;
-      height: 20px;
-      background-image: radial-gradient(circle at 86% -15%, transparent 25px, #ffffff 20px);
+      height: 16px;
+      background-image: radial-gradient(circle at 78% -50%, transparent 25px, #ffffff 20px);
       z-index: 1;
     }
 
     &:after {
       content: "";
       position: absolute;
-      bottom: 0px;
+      bottom: 58px;
       left: -26px;
       width: 30px;
-      height: 20px;
-      background-image: radial-gradient(circle at 10% -15%, transparent 25px, #ffffff 20px);
+      height: 16px;
+      background-image: radial-gradient(circle at 10% -36%, transparent 25px, #ffffff 20px);
       z-index: 1;
     }
 
@@ -2040,6 +2082,7 @@ a {
       width: 26px;
       height: 26px;
       margin-left: 20px;
+      margin-top: 30px;
 
       &:first-child {
         margin-left: 0;

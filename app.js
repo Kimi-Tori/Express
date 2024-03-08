@@ -1,4 +1,4 @@
-const leftImages = document.querySelectorAll('.banner__container-left__block-item__image');
+/* const leftImages = document.querySelectorAll('.banner__container-left__block-item__image');
 const rightImage = document.querySelector('.banner__container-right__block-image');
 
 const bottomLeftImages = document.querySelectorAll('.banner__container-bottom__left-block__item-image');
@@ -31,7 +31,7 @@ menuButton.addEventListener('click', () => {
     mobileMenu.classList.add('active');
     menuButton.textContent = 'Закрыть';
   }
-});
+}); */
 
 const navbarMobileItemContainer = document.querySelector('.navbar__mobile-item__container');
 const navbarMobileItemAboutTitle = document.querySelector('.navbar__mobile-item__about__title');
