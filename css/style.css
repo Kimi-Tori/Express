@@ -24,6 +24,10 @@ a {
   text-decoration: none;
 }
 
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
 @media only screen and (min-width: 768px) {
   .container {
     padding: 0 20px;
@@ -40,7 +44,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 7px 16px;
+  padding: 7px 0;
 }
 .navbar__mobile {
   display: none;
@@ -378,9 +382,9 @@ a {
   position: relative;
   background-color: #ffffff;
   padding-right: 56px;
-  height: 393px;
+  height: 433px;
   margin-left: -1px;
-  margin-top: -1px;
+  margin-top: -7px;
 }
 @media only screen and (min-width: 1280px) {
   .intro__left-social {
@@ -391,10 +395,10 @@ a {
   display: none;
   content: "";
   position: absolute;
-  bottom: -54px;
+  bottom: -47px;
   left: -1px;
   width: 65px;
-  height: 55px;
+  height: 48px;
   background-image: radial-gradient(circle at 80% 100%, transparent 50px, #ffffff 50px);
 }
 @media only screen and (min-width: 1280px) {
@@ -524,7 +528,7 @@ a {
   background-color: #ffffff;
   max-width: 400px;
   border-radius: 0 0 50px 0;
-  padding: 0 50px 20px 37px;
+  padding: 0 50px 47px 37px;
 }
 @media only screen and (min-width: 1280px) {
   .intro__button-md {
@@ -666,6 +670,8 @@ a {
   position: absolute;
   bottom: -10px;
   right: -10px;
+  width: 99px;
+  height: 99px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -678,7 +684,7 @@ a {
 .delivery__card-button__bottom:before {
   content: "";
   position: absolute;
-  bottom: 85px;
+  bottom: 80px;
   left: 59px;
   width: 30px;
   height: 27px;
@@ -699,7 +705,7 @@ a {
 }
 .delivery__card-button__bottom-purple {
   position: relative;
-  padding: 30px;
+  padding: 28.5px 30px;
   background-color: #7e5ddd;
   border-radius: 100px;
   z-index: 2;
@@ -1658,6 +1664,7 @@ a {
 .form__block-item {
   padding: 17px 20px;
   border-radius: 40px;
+  font-family: "Nunito", sans-serif;
   font-size: 16px;
   font-weight: 500;
   border: none;
