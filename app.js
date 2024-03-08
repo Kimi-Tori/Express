@@ -295,3 +295,52 @@ if (window.innerWidth <= 1280) {
     sliderFirstNavItems[currentSlideFirst].classList.add('active');
   });
 }
+
+const sliderDelivery = document.querySelector('.delivery__mobile-slider');
+const sliderItemsDelivery = document.querySelectorAll('.delivery__mobile-slider__wrapper-item');
+const sliderWidthDelivery = sliderItemsDelivery[0].offsetWidth;
+
+let currentSlideDelivery = 0;
+let isDraggingDelivery = false;
+let startPositionDelivery = 0;
+let currentTranslateDelivery = 0;
+let prevTranslateDelivery = 0;
+
+const slideDeliveryWidth = sliderItemsDelivery[0].offsetWidth; // Добавили отступ справа к ширине карточки
+const slidesDeliveryCount = sliderItemsDelivery.length;
+
+sliderDelivery.style.transform = `translateX(-${currentSlideDelivery * slideDeliveryWidth}px)`;
+
+sliderItemsDelivery.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    currentSlideDelivery = index;
+    sliderDelivery.style.transform = `translateX(-${currentSlideDelivery * slideDeliveryWidth}px)`;
+  });
+});
+
+sliderDelivery.addEventListener('touchstart', (e) => {
+  isDraggingDelivery = true;
+  startPositionDelivery = e.touches[0].clientX;
+  prevTranslateDelivery = currentTranslateDelivery;
+});
+
+sliderDelivery.addEventListener('touchmove', (e) => {
+  if (!isDraggingDelivery) return;
+
+  currentTranslateDelivery = prevTranslateDelivery + (e.touches[0].clientX - startPositionDelivery);
+  sliderDelivery.style.transform = `translateX(${currentTranslateDelivery}px)`;
+});
+
+sliderDelivery.addEventListener('touchend', () => {
+  isDraggingDelivery = false;
+
+  if (currentTranslateDelivery > 0) {
+    currentSlideDelivery = 0;
+  } else if (currentTranslateDelivery < -slideDeliveryWidth * (slidesDeliveryCount - 1)) {
+    currentSlideDelivery = slidesDeliveryCount - 1;
+  } else {
+    currentSlideDelivery = Math.round(-currentTranslateDelivery / slideDeliveryWidth);
+  }
+
+  sliderDelivery.style.transform = `translateX(-${currentSlideDelivery * slideDeliveryWidth}px)`;
+});

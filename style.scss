@@ -6,6 +6,7 @@ $dark-purple: #282539;
 $light-purple: #D8DFFF;
 $light-black: #303030;
 $grey: #d9dfff;
+$card-grey: #D9D9D9;
 $dark-grey: #f2f2f2;
 $light-grey: #E5E5E5;
 $asphalt: #908E8E;
@@ -449,6 +450,8 @@ a {
       background-color: $white;
       padding-right: 56px;
       height: 393px;
+      margin-left: -1px;
+      margin-top: -1px;
 
       @include up($md) {
         display: block;
@@ -505,6 +508,7 @@ a {
     font-weight: 600;
     line-height: 29px;
     max-width: 425px;
+    margin-left: -1px;
 
     @include up($md) {
       color: $black;
@@ -541,6 +545,7 @@ a {
     font-weight: 500;
     line-height: 22px;
     max-width: 425px;
+    margin-left: -1px;
 
     @include up($md) {
       color: $black;
@@ -591,6 +596,8 @@ a {
 
     @include up($md) {
       display: block;
+      margin-top: -1px;
+      margin-left: -1px;
     }
 
     & button {
@@ -651,6 +658,236 @@ a {
   }
 }
 
+.delivery {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1497px;
+  margin: 180px auto 0 ;
+
+  @include down($md) {
+    display: none;
+  }
+
+  &__card {
+    position: relative;
+    max-width: calc(100% / 3 - 100px);
+    width: 100%;
+    background-color: $card-grey;
+    margin-bottom: 24px;
+    padding: 40px;
+    border-radius: 40px;
+
+    &:first-child {
+      background-color: transparent;
+      padding: 40px 80px 40px 0;
+    }
+
+    &-title {
+      font-size: 45px;
+      font-weight: 600;
+    }
+
+    &-button {
+      padding: 18px 25px;
+      border: none;
+      border-radius: 40px;
+      background-color: $purple;
+      margin-top: 30px;
+      color: $white;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    &-text {
+      font-size: 28px;
+      font-weight: 600;
+
+      @include down($md) {
+        font-size: 18px;
+      }
+    }
+
+    &-block {
+      display: flex;
+    
+      &__plah {
+        font-size: 16px;
+        font-weight: 700;
+        background-color: $white;
+        border-radius: 20px;
+        padding: 8px 20px;
+        margin-top: 118px;
+        margin-left: 10px;
+        width: fit-content;
+
+        @include down($md) {
+          font-size: 13px;
+        }
+      }
+    }
+    &-button__bottom {
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      background-color: #fff;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 85px;
+        left: 59px;
+        width: 30px;
+        height: 27px;
+        background-image: radial-gradient(circle at 55% 140%, transparent 25px, white 25px);
+        transform: rotate(180deg);
+        z-index: 1;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 8px;
+        left: -10px;
+        width: 30px;
+        height: 27px;
+        background-image: radial-gradient(circle at 130% 45%, transparent 25px, white 25px);
+        transform: rotate(180deg);
+        z-index: 1;
+      }
+
+      &-purple {
+        position: relative;
+        padding: 30px;
+        background-color: $purple;
+        border-radius: 100px;
+        z-index: 2;
+        transition: 0.2s ease;
+
+        &:hover {
+          transform: rotate(45deg);
+          background-color: $pink;
+        }
+
+        &__svg {
+          width: 19px;
+          height: 19px;
+        }
+      }
+    }
+  }
+}
+
+.delivery__mobile {
+  max-width: 1497px;
+  margin: 60px auto 0 ;
+  max-width: calc(90% + 35px);
+  overflow: hidden;
+
+  @include down($sm) {
+    max-width: 90%;
+  }
+
+  @include up($md) {
+    display: none;
+  }
+
+  &-title {
+    font-size: 23px;
+    font-weight: 600;
+  }
+  &-slider {
+    width: 100%;
+
+    &__wrapper {
+      display: flex;
+      width: calc(100% * 5);
+
+      &-item {
+        position: relative;
+        width: 100%;
+        background-color: $card-grey;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 16px;
+        overflow: hidden;
+      }
+    }
+  }
+  &-card__block-plah {
+    margin-top: 118px;
+    font-size: 13px;
+    font-weight: 700;
+    background-color: $white;
+    border-radius: 10px;
+    margin-left: 15px;
+    padding: 5px 12px;
+  }
+  &-card__button-bottom {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 75px;
+      left: 59px;
+      width: 30px;
+      height: 27px;
+      background-image: radial-gradient(circle at 55% 140%, transparent 25px, white 25px);
+      transform: rotate(180deg);
+      z-index: 1;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 8px;
+      left: -10px;
+      width: 30px;
+      height: 27px;
+      background-image: radial-gradient(circle at 130% 45%, transparent 25px, white 25px);
+      transform: rotate(180deg);
+      z-index: 1;
+    }
+    &__purple {
+      position: relative;
+      padding: 30px;
+      background-color: $purple;
+      border-radius: 100px;
+      z-index: 2;
+      transition: 0.2s ease;
+
+      &:hover {
+        transform: rotate(45deg);
+        background-color: $pink;
+      }
+
+      &-svg {
+        width: 11px;
+        height: 10px;
+      }
+    }
+  }
+}
+
 .slider__first-hidden {
   display: block;
   overflow: hidden;
@@ -673,12 +910,12 @@ a {
   }
 
   &__title {
-    font-size: 45px;
+    font-size: 23px;
     font-weight: 600;
     margin-bottom: 50px;
 
-    @include down($md) {
-      font-size: 23px;
+    @include up($sm) {
+      font-size: 45px;
     }
   }
 }
@@ -723,12 +960,12 @@ a {
         border-radius: 20px 20px 0 0;
 
         &__title {
-          font-size: 45px;
+          font-size: 21px;
           font-weight: 600;
           margin-right: 40px;
 
-          @include down($sm) {
-            font-size: 21px;
+          @include up($sm) {
+            font-size: 45px;
           }
         }
 
@@ -745,21 +982,21 @@ a {
         padding: 0 40px 40px 40px;
 
         &__title {
-          font-size: 28px;
+          font-size: 18px;
           font-weight: 600;
 
-          @include down($sm) {
-            font-size: 18px;
+          @include up($sm) {
+            font-size: 28px;
           }
         }
 
         &__text {
-          font-size: 24px;
+          font-size: 13px;
           font-weight: 400;
           margin-top: 20px;
 
-          @include down($sm) {
-            font-size: 13px;
+          @include up($sm) {
+            font-size: 24px;
           }
         }
       }
@@ -841,6 +1078,7 @@ a {
 }
 
 .card {
+  position: relative;
   display: none;
   margin-top: 180px;
   max-width: 1495px;
@@ -884,6 +1122,7 @@ a {
 }
 
 .security {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1750,5 +1989,98 @@ a {
         height: 26px;
       }
     }
+  }
+}
+
+.position {
+  position: relative;
+  max-width: 1497px;
+  margin: auto auto;
+}
+
+.intro__line {
+  position: absolute;
+  top: 100%;
+  right: 14%;
+  width: 60%;
+  z-index: -1;
+  @include down($lg) {
+    display: none;
+  }
+}
+.delivery__line {
+  position: absolute;
+  top: 100%;
+  right: 14%;
+  width: 100%;
+  z-index: -1;
+  @include down($lg) {
+    display: none;
+  }
+}
+.slider__line {
+  position: absolute;
+  top: 50%;
+  right: 101%;
+  z-index: -1;
+  @include down($lg) {
+    display: none;
+  }
+}
+.slider__line2 {
+  position: absolute;
+  top: 96%;
+  right: 8%;
+  width: 70%;
+  z-index: -1;
+  @include down($lg) {
+    display: none;
+  }
+}
+.card__line {
+  position: absolute;
+  width: 75%;
+  left: 10%;
+  top: 100%;
+  z-index: -1;
+  @include down($lg) {
+    display: none;
+  }
+}
+.security__line {
+  position: absolute;
+  top: 105%;
+  right: 10%;
+  z-index: -1;
+  @include down($lg) {
+    display: none;
+  }
+}
+.license__line {
+  position: absolute;
+  bottom: 100%;
+  left: 10%;
+  z-index: -1;
+  @include down($lg) {
+    display: none;
+  }
+}
+.license__line2 {
+  position: absolute;
+  top: 100%;
+  left: 7%;
+  width: 70%;
+  z-index: -1;
+  @include down($lg) {
+    display: none;
+  }
+}
+.slider__controll-line {
+  position: absolute;
+  top: 85%;
+  right: 10%;
+  z-index: -1;
+  @include down($lg) {
+    display: none;
   }
 }
