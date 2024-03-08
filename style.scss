@@ -215,6 +215,10 @@ a {
       display: none;
       align-items: center;
       margin-left: 35px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 24px;
+      font-family: 'Nunito', sans-serif;
 
       @include up($md) {
         display: flex;
@@ -343,6 +347,7 @@ a {
       margin-right: 25px;
       font-weight: 700;
       font-size: 18px;
+      font-family: 'Nunito', sans-serif;
 
       &:hover {
         color: $purple;
@@ -459,13 +464,13 @@ a {
 
       &::before, &::after {
         display: none;
-        content: '';
+        content: "";
         position: absolute;
-        bottom: -49px;
+        bottom: -54px;
         left: -1px;
-        width: 50px;
-        height: 50px;
-        background-image: radial-gradient(circle at 100% 100%, transparent 50px, $white  50px);
+        width: 65px;
+        height: 55px;
+        background-image: radial-gradient(circle at 80% 100%, transparent 50px, #ffffff 50px);
   
         @include up($md) {
           display: block;
@@ -544,6 +549,7 @@ a {
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
+    font-family: 'Nunito', sans-serif;
     max-width: 425px;
     margin-left: -1px;
 
@@ -554,6 +560,9 @@ a {
       padding: 0 50px 20px 37px;
       max-width: 400px;
       margin-top: -1px;
+      font-size: 16px;
+      line-height: 21px;
+      font-weight: 500;
     }
 
     &::before, &::after {
@@ -580,7 +589,10 @@ a {
     color: $white;
     cursor: pointer;
     margin-top: 26px;
+    font-size: 18px;
     font-weight: 700;
+    line-height: 24px;
+    font-family: 'Nunito', sans-serif;
 
     @include up($md) {
       display: none;
@@ -607,7 +619,10 @@ a {
       background-color: $purple;
       color: $white;
       cursor: pointer;
+      font-size: 18px;
       font-weight: 700;
+      line-height: 24px;
+      font-family: 'Nunito', sans-serif;
     }
   }
 
@@ -698,11 +713,14 @@ a {
       color: $white;
       font-size: 18px;
       font-weight: 700;
+      line-height: 24px;
+      font-family: 'Nunito', sans-serif;
     }
 
     &-text {
       font-size: 28px;
       font-weight: 600;
+      line-height: 34px;
 
       @include down($md) {
         font-size: 18px;
@@ -713,8 +731,10 @@ a {
       display: flex;
     
       &__plah {
+        font-family: 'Nunito', sans-serif;
         font-size: 16px;
         font-weight: 700;
+        line-height: 21px;
         background-color: $white;
         border-radius: 20px;
         padding: 8px 20px;
@@ -900,6 +920,10 @@ a {
     margin: 60px auto 0;
   }
 
+  @include down($md) {
+    margin: 60px auto 0;
+  }
+
   @include up($sm) {
     max-width: calc(90% + 35px);
   }
@@ -912,6 +936,7 @@ a {
   &__title {
     font-size: 23px;
     font-weight: 600;
+    line-height: 54px;
     margin-bottom: 50px;
 
     @include up($sm) {
@@ -962,6 +987,7 @@ a {
         &__title {
           font-size: 21px;
           font-weight: 600;
+          line-height: 34px;
           margin-right: 40px;
 
           @include up($sm) {
@@ -991,8 +1017,10 @@ a {
         }
 
         &__text {
+          font-family: 'Nunito', sans-serif;
           font-size: 13px;
           font-weight: 400;
+          line-height: 32px;
           margin-top: 20px;
 
           @include up($sm) {
@@ -1097,6 +1125,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 45px;
 
     &-block {
       display: flex;
@@ -1116,6 +1145,8 @@ a {
         text-align: center;
         font-size: 28px;
         font-weight: 600;
+        line-height: 34px;
+        margin-top: 30px;
       }
     }
   }
@@ -1184,15 +1215,17 @@ a {
 
     @include up($md) {
       font-size: 45px;
+      line-height: 54px;
       max-width: 950px;
       margin-top: 0;
     }
   }
 
   &__subtitle {
+    font-family: 'Nunito', sans-serif;
     font-size: 16px;
     line-height: 21.82px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
     max-width: 327px;
     margin-top: 12px;
@@ -1201,6 +1234,7 @@ a {
 
     @include up($md) {
       font-size: 24px;
+      line-height: 32px;
       max-width: 685px;
     }
   }
@@ -1500,12 +1534,14 @@ a {
 
     @include up($md) {
       font-size: 45px;
+      line-height: 54px;
       max-width: 950px;
       margin-top: 0;
     }
   }
 
   &__subtitle {
+    font-family: 'Nunito', sans-serif;
     font-size: 16px;
     line-height: 21.82px;
     font-weight: 500;
@@ -1517,11 +1553,13 @@ a {
 
     @include up($md) {
       font-size: 24px;
+      line-height: 32px;
       max-width: 685px;
     }
   }
 
   &__button {
+    font-family: 'Nunito', sans-serif;
     padding: 15px 25px;
     border-radius: 100px;
     border: none;
@@ -1533,6 +1571,7 @@ a {
 
     @include up($md) {
       font-size: 18px;
+      font-weight: 700;
       padding: 17px 25px;
     }
   }
@@ -1593,6 +1632,10 @@ a {
 
         &-text {
           max-width: 115px;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 21px;
+          font-family: 'Nunito', sans-serif;
         }
 
         &-button {
@@ -1786,8 +1829,11 @@ a {
         border-radius: 40px;
         background-color: $purple;
         padding: 10px 25px;
+        font-family: 'Nunito', sans-serif;
+        padding: 18px 25px;
         font-size: 17px;
         font-weight: 700;
+        line-height: 24px;
         color: $white;
         cursor: pointer;
       }
@@ -1795,8 +1841,10 @@ a {
       &__text {
         max-width: 380px;
         margin-left: 12px;
+        font-family: 'Nunito', sans-serif;
         font-size: 12px;
         font-weight: 300;
+        line-height: 16px;
       }
     }
   }
@@ -1825,8 +1873,10 @@ a {
       }
       &__text {
         color: $white;
+        font-family: 'Nunito', sans-serif;
         font-size: 16px;
         font-weight: 400;
+        line-height: 21px;
         margin-top: 20px;
 
         &:first-child {
@@ -1848,8 +1898,10 @@ a {
         display: flex;
         align-items: center;
         color: $white;
+        font-family: 'Nunito', sans-serif;
         font-size: 16px;
         font-weight: 400;
+        line-height: 21px;
         margin-top: 20px;
         white-space: nowrap;
 
@@ -1892,8 +1944,10 @@ a {
           &__text {
             display: block;
             color: $white;
+            font-family: 'Nunito', sans-serif;
             font-size: 16px;
             font-weight: 400;
+            line-height: 21px;
             margin-top: 20px;
 
             &:hover {
@@ -1908,6 +1962,7 @@ a {
 
         &-right {
           margin-left: 85px;
+          margin-top: 30px;
 
           &__text {
             display: block;
